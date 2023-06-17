@@ -51,4 +51,4 @@ def reparaciones(request):
     return render(request,'menu/reparaciones.html')
 
 def reparacioningresado(request):
-    return render(request,'menu/reparacionesingresado.html')
+    return render(request,'menu/reparacioningresado.html')

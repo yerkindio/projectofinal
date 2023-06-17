@@ -1,10 +1,11 @@
 from django.contrib import admin
-from django.urls import path, include
-from .views import inicio, clientes,contacto,contactoingresado,crearcuenta,index,ingresado,iniciosesion,micuenta,notebookingresado,notebooks,pc,pcingresado,Perfil,recuperarcontra,reparaciones,reparacioningresado
+from django.urls import path
+from .views import inicio,contacto,contactoingresado,crearcuenta,index,ingresado,iniciosesion,micuenta,notebookingresado,notebooks,pc,pcingresado,Perfil,recuperarcontra,reparaciones,reparacioningresado
 
 urlpatterns = [
-    path('inicio', inicio, name='inicio'),
-    path('clientes/',clientes,name="clientes"), 
+
+    path('',inicio,name='inicio'),
+    path('inicio',inicio, name='inicio'),
     path('contacto/',contacto,name="contacto"),
     path('contactoingresado/',contactoingresado,name="contactoingresado"),
     path('crearcuenta/',crearcuenta,name="crearcuenta"),
@@ -18,7 +19,7 @@ urlpatterns = [
     path('pcingresado/',pcingresado,name="pcingresado"),
     path('Perfil/',Perfil,name="Perfil"),
     path('recuperarcontra/',recuperarcontra,name="recuperarcontra"),
-    path('reparaciones',reparaciones,name="reparaciones"),
-    path('reparacioningresado',reparacioningresado,name="reparacioningresado"),
+    path('reparaciones/',reparaciones,name="reparaciones"),
+    path('reparacioningresado/',reparacioningresado,name="reparacioningresado"),
 
 ]
