@@ -30,7 +30,7 @@ def micuenta(request):
     return render (request,'menu/micuenta.html')
 
 def notebookingresado(request):
-    return render (request,'menu/notebookingresado.html')
+    return render (request,'menu/notebooks.html')
 
 def notebooks (request):
     return render (request,'menu/notebooks.html')
