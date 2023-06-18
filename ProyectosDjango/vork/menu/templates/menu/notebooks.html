@@ -16,6 +16,7 @@
 
 <body>
   <style>
+    
     body {
       font-size: 28px;
     }
@@ -67,8 +68,31 @@
     </div>
 
     <div class="row" style="text-align: center;">
-      {% block content %}
-      {% endblock content %}
+      <div class="row">
+        <div class="col-md-6">
+          <input type="checkbox">
+          <h3>Limpieza Completa</h3>
+        </div>
+        <div class="col-md-6">
+          <input type="checkbox">
+          <h3>Cambio de pasta termica</h3>
+        </div>
+      </div>
+      
+      <div class="row" style="text-align: center;">
+        <div class="col-md-4">
+          <input type="checkbox">
+          <h3>Formateo completo</h3>
+        </div>
+        <div class="col-md-4">
+          <input type="checkbox">
+          <h3>Remplazo de Componentes</h3>
+        </div>
+        <div class="col-md-4">
+          <input type="checkbox">
+          <h3>Cambio de Sistema operativo</h3>
+        </div>
+      </div>
       <form action="/html/contacto.html">
       <div class="row">
         <div class="col-md-12">
