@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VORK SERVICE - Listar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="{% static 'menu/css/estilos.css' %}">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body style="background-color: lightblue;">
+    <h1>Listado</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID Equipo</th>
+                <th>ID Tipo</th>
+                <th>ID Usuario</th>
+                <th>Descripción</th>
+                <th>Sesión</th>
+                <th>Capacidad de Disco</th>
+                <th>RAM</th>
+                <th>Placa Madre</th>
+                <th>Procesador</th>
+                <th>Fuente de Poder</th>
+                <th>Sistema Operativo</th>
+                <th>Tipo de Disco</th>
+                <th>GPU</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for equipo in equipo %}
+            <tr>
+                <td>{{ equipo.id_equipo }}</td>
+                <td>{{ equipo.id_tipo }}</td>
+                <td>{{ equipo.id_usuario }}</td>
+                <td>{{ equipo.descripcion }}</td>
+                <td>{{ equipo.sesion }}</td>
+                <td>{{ equipo.cap_disco }}</td>
+                <td>{{ equipo.ram }}</td>
+                <td>{{ equipo.placaM }}</td>
+                <td>{{ equipo.procesador }}</td>
+                <td>{{ equipo.fuente_poder }}</td>
+                <td>{{ equipo.sistema_op }}</td>
+                <td>{{ equipo.tipo_disc }}</td>
+                <td>{{ equipo.gpu }}</td>
+                <td>
+                    <a  href="{% url 'form_modificar' equipo.id_equipo %}">Modificar</a><br>
+                    <a  href="{% url 'eliminar' equipo.id_equipo %}">Eliminar</a>
+                </td>
+    
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'form_agregar' %}">Agregar</a>
+</body>
+</html>

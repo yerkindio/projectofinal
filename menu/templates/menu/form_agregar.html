@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VORK SERVICE - Agregar</title>
+    
+    
+    
+   
+  
+ 
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body style="background-color: lightblue;">
+    <h1>Creación</h1>
+    <div class="row">
+        <form method="post" action="" id="formulario">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_table}}
+                <label for="id_equipo">ID Equipo:</label>
+                <input type="number" id="id_equipo" name="id_equipo" required>
+            </div>
+            <div class="form-group">
+                <label for="id_tipo">ID Tipo:</label>
+                <select id="id_tipo" name="id_tipo" required>
+                    <option value="1">Tipo 1</option>
+                    <option value="2">Tipo 2</option>
+                    
+                    
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="id_usuario">ID Usuario:</label>
+                <select id="id_usuario" name="id_usuario" required>
+                    <option value="1">Usuario 1</option>
+                    <option value="2">Usuario 2</option>
+                    
+                  
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" maxlength="200" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="sesion">Sesión:</label>
+                <input type="text" id="sesion" name="sesion" required>
+            </div>
+            <div class="form-group">
+                <label for="cap_disco">Capacidad de Disco:</label>
+                <input type="text" id="cap_disco" name="cap_disco" required>
+            </div>
+            <div class="form-group">
+                <label for="ram">Memoria RAM:</label>
+                <input type="text" id="ram" name="ram" required>
+            </div>
+            <div class="form-group">
+                <label for="placaM">Placa Madre:</label>
+                <input type="text" id="placaM" name="placaM" required>
+            </div>
+            <div class="form-group">
+                <label for="procesador">Procesador:</label>
+                <input type="text" id="procesador" name="procesador" required>
+            </div>
+            <div class="form-group">
+                <label for="fuente_poder">Fuente de Poder:</label>
+                <input type="text" id="fuente_poder" name="fuente_poder" required>
+            </div>
+            <div class="form-group">
+                <label for="sistema_op">Sistema Operativo:</label>
+                <input type="text" id="sistema_op" name="sistema_op" required>
+            </div>
+            <div class="form-group">
+                <label for="tipo_disc">Tipo de Disco:</label>
+                <input type="text" id="tipo_disc" name="tipo_disc" required>
+            </div>
+            <div class="form-group">
+                <label for="gpu">Tarjeta de Video:</label>
+                <input type="text" id="gpu" name="gpu" required>
+            </div>
+
+            <input type="submit" class="btn btn-danger" id="enviar" value="Agregar">
+            <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+            <div id="error" class="alert alert-danger" role="alert"></div>
+        </form>
+        <div class="alert alert-success" role="alert">
+            {{mensaje}}
+        </div>
+    </div>
+    <a href="{% url 'listar' %}">lista</a>
+</body>
+</html>

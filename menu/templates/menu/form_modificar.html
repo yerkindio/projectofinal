@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VORK SERVICE - Modificar</title>
+ 
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body style="background-color: lightblue;">
+
+
+
+    <h1>Modificacion</h1>
+    <div class="row">
+        <form method="post" action="" id="formulario">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_table}}
+
+            <input type="submit" class="btn btn-danger" id="enviar" value="modificar">
+            <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+            <div id="error" class="alert alert-danger" role="alert"></div>
+        </form>
+        <div class="alert alert-success" role="alert">
+            {{mensaje}}
+        </div>
+    </div>
+    <a href="{% url 'listar' %}">lista</a>
+</body>
+</html>
