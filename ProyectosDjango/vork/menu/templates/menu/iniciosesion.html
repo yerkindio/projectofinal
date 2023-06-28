@@ -83,7 +83,7 @@
         <h1 style="text-align: center;">Iniciar Sesion</h1>
         
         <div class="col-md-4"></div>
-        <form method="post" action="/html/ingresado.html">
+        <form method="post" action="{% url 'ingresado' %}">
           {% csrf_token %}  <!--token-->
           <div class="username">
             <input type="text" required placeholder="Nombre Usuario" >
