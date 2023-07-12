@@ -1,0 +1,10 @@
+pip install pillow
+pip install cx_oracle
+pip install django
+pip installdjangorestframework
+sys as sisdba
+alter sesion set "_oracle_script"=true;
+create user vork identified by vork123;
+grant connect, resources to vork;
+alter user vork default tablespace user quota unlimited on users;
+python manage.py createsuperuser
