@@ -19,6 +19,7 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('menu.urls')),
+    path('accounts/', admin.site.urls),
     path('api/',include('rest_vork.urls')),
     
 ]
