@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import form_agregar, form_modificar, listar, eliminar, modificar, agregar, inicio, contacto, contactoingresado, crearcuenta, ingresado, iniciosesion, micuenta, notebookingresado, notebooks, pc, pcingresado, Perfil, recuperarcontra, reparaciones, reparacioningresado
+from .views import form_agregar, form_modificar, listar, eliminar, modificar, agregar, inicio, contacto, contactoingresado, crearcuenta, ingresado, iniciosesion, micuenta, notebookingresado, notebooks, pc, pcingresado, recuperarcontra, reparaciones, reparacioningresado
 
 urlpatterns = [
     # CRUD
@@ -24,7 +24,6 @@ urlpatterns = [
     path('notebooks/', notebooks, name="notebooks"),
     path('pc/', pc, name="pc"),
     path('pcingresado/', pcingresado, name="pcingresado"),
-    path('Perfil/', Perfil, name="Perfil"),
     path('recuperarcontra/', recuperarcontra, name="recuperarcontra"),
     path('reparaciones/', reparaciones, name="reparaciones"),
     path('reparacioningresado/', reparacioningresado, name="reparacioningresado"),

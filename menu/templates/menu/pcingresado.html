@@ -55,10 +55,10 @@
     </style>
     <ul>
       <li><a class="active" href="{% url 'reparacioningresado' %}">Volver</a></li>
-      <li><a href="{% url 'micuenta' %}">Mi Cuenta</a></li>
-      <li><a href="{% url 'iniciosesion' %}">Cerrar sesion</a></li>
-      <li><a href="{% url 'contacto' %}">contacto</a></li>
-      <li><a href="{% url 'Perfil' %}">Administracion</a></li>
+      <li><a class="active" href="{% url 'micuenta' %}">Mi Cuenta</a></li>
+      <li><a class="active" href="{% url 'iniciosesion' %}">Cerrar sesion</a></li>
+      <li><a class="active" href="{% url 'contacto' %}">contacto</a></li>
+     
     </ul>
 
     <div class="container-fluid">
@@ -97,10 +97,10 @@
           <input type="checkbox">
           <h3>Cambio de Sistema operativo</h3>
         </div>
-        <form action="/html/contactoingresado.html">
+        <form action="{% url 'contactoingresado' %}">
         <div class="row">
           <div class="col-md-12">
-            <input type="submit" value="Enviar Reparacion" style="width: 50%;">
+            <input type="submit" value="Enviar solicitud" style="width: 50%;">
           </div>
         </div>
       </form>

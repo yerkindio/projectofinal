@@ -73,10 +73,10 @@
     </style>
     <ul>
       <li><a class="active" href="{% url 'inicio' %}"><h3>Volver</h3></a></li>
-      <li><a href="{% url 'iniciosesion' %}">inicio sesion</a></li>
-      <li><a href="{% url 'contacto' %}">contacto</a></li>
+      <li><a class="active" href="{% url 'iniciosesion' %}">inicio sesion</a></li>
+      <li><a class="active" href="{% url 'contacto' %}">contacto</a></li>
     </ul>
-    <h3>seleccione el dispositivo que necesita reparar:</h3>
+    <h3>seleccione el dispositivo:</h3>
     <div class="polaroid">
       <img src="{% static 'menu/imagenes/pc.jpg' %}" alt="no se a encontrado la imagen" style="width:100% ">
       <div class="container">

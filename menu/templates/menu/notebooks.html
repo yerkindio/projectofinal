@@ -16,6 +16,7 @@
 
 <body>
   <style>
+    
     body {
       font-size: 28px;
     }
@@ -54,8 +55,8 @@
   </style>
   <ul>
     <li><a class="active" href="{% url 'reparaciones' %}">Volver</a></li>
-    <li><a href="{% url 'iniciosesion' %}">inicio sesion</a></li>
-    <li><a href="{% url 'contacto' %}">contacto</a></li>
+    <li><a class="active" href="{% url 'iniciosesion' %}">inicio sesion</a></li>
+    <li><a class="active" href="{% url 'contacto' %}">contacto</a></li>
   </ul>
 
   <div class="container">
@@ -67,46 +68,41 @@
     </div>
 
     <div class="row" style="text-align: center;">
-      <div class="col-md-6">
-        <input type="checkbox">
-        <h3>Limpieza Completa</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <input type="checkbox">
+          <h3>Limpieza Completa</h3>
+        </div>
+        <div class="col-md-6">
+          <input type="checkbox">
+          <h3>Cambio de pasta termica</h3>
+        </div>
       </div>
-      <div class="col-md-6">
-        <input type="checkbox">
-        <h3>Cambio de pasta termica</h3>
+      
+      <div class="row" style="text-align: center;">
+        <div class="col-md-4">
+          <input type="checkbox">
+          <h3>Formateo completo</h3>
+        </div>
+        <div class="col-md-4">
+          <input type="checkbox">
+          <h3>Remplazo de Componentes</h3>
+        </div>
+        <div class="col-md-4">
+          <input type="checkbox">
+          <h3>Cambio de Sistema operativo</h3>
+        </div>
       </div>
-    </div>
-
-    <div class="row" style="text-align: center;">
-      <div class="col-md-4">
-        <input type="checkbox">
-        <h3>Formateo completo</h3>
-      </div>
-      <div class="col-md-4">
-        <input type="checkbox">
-        <h3>Remplazo de Componentes</h3>
-      </div>
-      <div class="col-md-4">
-        <input type="checkbox">
-        <h3>Cambio de Sistema operativo</h3>
-      </div>
-      <form action="/html/contacto.html">
+      <form action="{% url 'contacto' %}">
       <div class="row">
         <div class="col-md-12">
-          <input type="submit" value="Enviar Reparacion" style="width: 50%;">
+          <input type="submit" value="Enviar solicitud" style="width: 50%;">
         </div>
       </div>
     </form>
     </div>
   </div>
   </div>
-
-
-
-
-
-
-
 
 <footer>
       <p>Contactanos</p>
@@ -122,3 +118,10 @@
 
 </body>
 </html>
+
+
+
+
+
+
+

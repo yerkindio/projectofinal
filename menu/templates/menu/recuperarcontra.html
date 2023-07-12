@@ -75,8 +75,9 @@
     <body>
 
      <ul>
+        <li><a class="active" href="{% url 'inicio' %}">Volver</a></li>
         <li><a class="active" href="{% url 'reparaciones' %}">Reparaciones</a></li>
-        <li><a href="{% url 'contacto' %}">contacto</a></li>
+        <li><a class="active" href="{% url 'contacto' %}">contacto</a></li>
       </ul>
       <div>
         <div>
@@ -88,15 +89,16 @@
               <div class="col-md-4">
                 <form id="formulario">
                   <div class="username">
-                    <input type="email" id="correo" required placeholder="Ingrese correo electronico">
+                    <input type="email" id="correo" required placeholder="Ingrese correo electrónico">
                     <div id="correo-error" class="error"></div>
                   </div>
                   <div class="username">
-                    <input type="number" id="telefono" required placeholder="Ingrese su número de telefono">
+                    <input type="number" id="telefono" required placeholder="Ingrese su número de teléfono">
                     <div id="telefono-error" class="error"></div>
                   </div>
                   <input type="submit" value="Recuperar contraseña">
                 </form>
+                <div id="mensaje"></div>
               </div>
               <div class="col-md-4"></div>
             </div>

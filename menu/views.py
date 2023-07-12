@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+from django.contrib.auth.decorators import login_required
 from .models import Equipo,Tipo,Usuario
 from .forms import EquipoForm
 
@@ -6,11 +7,12 @@ from .forms import EquipoForm
 
 # Create your views here.
 #-----------------form----------------------#
+@login_required
 def listar(request):
     equipos = Equipo.objects.all()
     context={"equipo":equipos}
     return render(request, 'menu/listar.html',context)
-
+@login_required
 def form_agregar(request):
     datos = {
         'form': EquipoForm()
@@ -28,7 +30,7 @@ def form_agregar(request):
         "listausuario": usuario
     }
     return render(request, 'menu/form_agregar.html', context)
-
+@login_required
 def form_modificar(request,id):
     
     equipo = Equipo.objects.get(id_equipo = id)
@@ -63,13 +65,13 @@ def clientes(request):
 
 def contacto(request):
     return render(request,'menu/contacto.html')
-
+@login_required
 def contactoingresado(request):
     return render(request,'menu/contactoingresado.html')
 
 def crearcuenta(request):
     return render(request,'menu/crearcuenta.html')
-
+@login_required
 def ingresado(request):
     return render (request,'menu/ingresado.html')
 
@@ -78,7 +80,7 @@ def iniciosesion(request):
 
 def micuenta(request):
     return render (request,'menu/micuenta.html')
-
+@login_required
 def notebookingresado(request):
     return render (request,'menu/notebookingresado.html')
 
@@ -87,24 +89,21 @@ def notebooks (request):
 
 def pc (request):
     return render (request,'menu/pc.html')
-
+@login_required
 def pcingresado(request):
     return render (request,'menu/pcingresado.html')
-
-def Perfil(request):
-    return render(request,'menu/Perfil.html')
 
 def recuperarcontra(request):
     return render(request,'menu/recuperarcontra.html')
 
 def reparaciones(request):
     return render(request,'menu/reparaciones.html')
-
+@login_required
 def reparacioningresado(request):
     return render(request,'menu/reparacioningresado.html')
 
 #----------------------agregar/modificar/eliminar------------------------------------#
-
+@login_required
 def agregar(request):
     id_equipoM = request.POST["id_equipo"]
     id_tipoM = request.POST["id_tipo"]
@@ -127,7 +126,7 @@ def agregar(request):
                           sesion=sesionM, cap_disco=cap_discoM, ram=ramM, placaM=placaMM, procesador=procesadorM,
                           fuente_poder=fuente_poderM, sistema_op=sistema_opM, tipo_disc=tipo_discM, gpu=gpuM)
     return redirect('form_agregar')
-
+@login_required
 def modificar(request):
     id_equipoM = request.POST["id_equipo"]
     id_tipoM = request.POST["id_tipo"]
@@ -163,7 +162,7 @@ def modificar(request):
 
     equipo.save()
     return redirect('listar')
-
+@login_required
 def eliminar(request, id):
     equipo = Equipo.objects.get(id_equipo = id)
     equipo.delete()

@@ -38,4 +38,6 @@ form.addEventListener("submit", function(event) {
 
     // Si todo está correcto, enviar el formulario
     form.submit();
+
+    
 });

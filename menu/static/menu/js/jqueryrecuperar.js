@@ -3,10 +3,8 @@ const correoInput = document.getElementById("correo");
 const telefonoInput = document.getElementById("telefono");
 
 form.addEventListener("submit", function(event) {
-  // Prevenir que el formulario se envíe
   event.preventDefault();
 
-  // Validar el correo electrónico
   const correoValue = correoInput.value;
   const correoRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
   if (!correoValue || correoValue.indexOf("@") === -1) {
@@ -14,7 +12,6 @@ form.addEventListener("submit", function(event) {
     return;
   }
 
-  // Validar el número de teléfono
   const telefonoValue = telefonoInput.value;
   const regexTelefono = /^\d{10}$/;
   if (!telefonoValue || telefonoValue.length !== 10) {
@@ -22,6 +19,6 @@ form.addEventListener("submit", function(event) {
     return;
   }
 
-  // Si todo está correcto, enviar el formulario
-  form.submit();
+  // Envío del correo
+  document.getElementById("mensaje").textContent = "Correo enviado";
 });
